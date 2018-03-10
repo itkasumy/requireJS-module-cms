@@ -1,0 +1,66 @@
+<div class="modal fade" tabindex="-1" id="modalEditCourseCategory" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">编辑分类</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form form-horizontal">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">分类名称</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="cg_name" value="{{cg_name}}" class="form-control">
+                            <input type="hidden" name="cg_id" value="{{cg_id}}">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">是否显示</label>
+                        <div class="col-sm-10">
+                            {{if(cg_is_hide == 0)}}
+                            <label class="radio-inline">
+                                <input type="radio" name="cg_is_hide" checked value="0"> 是
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="cg_is_hide" value="1"> 否
+                            </label>
+                            {{else}}
+                            <label class="radio-inline">
+                                <input type="radio" name="cg_is_hide" value="0"> 是
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="cg_is_hide" checked value="1"> 否
+                            </label>
+                            {{/if}}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">排序</label>
+                        <div class="col-sm-10">
+                            <input type="number" value="{{cg_order}}" name="cg_order" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">上级分类</label>
+                        <div class="col-sm-10">
+                            <select class="form-control" name="cg_pid">
+                                {{each top}}
+                                    {{if(cg_pid == $value.cg_id)}}
+                                    <option selected value="{{$value.cg_id}}">{{$value.cg_name}}</option>
+                                    {{else}}
+                                    <option value="{{$value.cg_id}}">{{$value.cg_name}}</option>
+                                    {{/if}}
+                                {{/each}}
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-offset-10 col-md-2">
+                            <button type="submit" class="btn btn-success btnCategoryAdd">提交</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

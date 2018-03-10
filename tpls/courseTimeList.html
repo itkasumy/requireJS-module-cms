@@ -1,0 +1,53 @@
+<div class="panel panel-default">
+    <div class="panel-body">
+        <ol class="breadcrumb">
+            <li><a href="#">课时管理</a></li>
+            <li><a href="#">课时列表</a></li>
+        </ol>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">课程基本信息</div>
+            <div class="panel-body">
+                <div class="media">
+                    <div class="media-left">
+                        <a href="#">
+                            <img class="media-object" width="240px" height="120px" src="{{cs_cover}}" alt="">
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading">课时名称： {{cs_name}}</h4>
+                        <h4 class="media-heading">讲师名称： {{tc_name}}</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">课时信息</div>
+            <div class="panel-body">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>编号</th>
+                            <th>名称</th>
+                            <th>时长</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{each lessons}}
+                            <tr>
+                                <td>{{$value.ct_id}}</td>
+                                <td>{{$value.ct_name}}</td>
+                                <td>{{$value.ct_video_duration}}</td>
+                                <td ctId="{{$value.ct_id}}">
+                                    <button class="btn btn-primary btnEdit">编辑</button>
+                                </td>
+                            </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

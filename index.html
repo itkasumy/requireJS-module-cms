@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>KSM</title>
+	<link rel="stylesheet" href="./assets/bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" href="./assets/datetimepicker/css/bootstrap-datetimepicker.css">
+	<link rel="stylesheet" href="./assets/uploadify/uploadify.css">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+<body>
+	<div class="aside">
+		<div class="profile">
+			<div class="imgContainer">
+				<img src="#" alt="" class="img-responsive img-circle">
+			</div>
+			<h4 class="text-center"></h4>
+		</div>
+		<div class="navs">
+			<div class="list-group">
+				<a href="#" class="list-group-item chart active"><i class="glyphicon glyphicon-dashboard"></i> 仪表盘</a>
+				<a href="#" class="list-group-item teacherManager"><i class="glyphicon glyphicon-education"></i> 讲师管理</a>
+				<a href="#" class="list-group-item category"><i class="glyphicon glyphicon-list-alt"></i> 分类管理</a>
+				<a href="#" class="list-group-item courseManager"><i class="glyphicon glyphicon-th"></i> 课程管理 <i class="arr"> &gt;</i></a>
+				<a href="#" class="list-group-item subMenu hide addCourse"> 添加课程</a>
+				<a href="#" class="list-group-item subMenu hide"> 课程基本信息</a>
+				<a href="#" class="list-group-item subMenu hide"> 课程图片</a>
+				<a href="#" class="list-group-item subMenu hide  courseTimeManager"> 课时管理</a>
+			</div>
+		</div>
+	</div>
+
+	<div class="contentContainer">
+		<div class="panel panel-default topNav">
+			<div class="panel-body">
+				<button type="button" class="btn btn-success" aria-label="Left Align">
+					<span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+				</button>
+
+				<ul class="nav navbar navbar-right">
+					<li><a href="javascript:void(0);" class="personalPart"><i class="glyphicon glyphicon-user"></i> 个人中心</a></li>
+					<li><a href="#"><i class="glyphicon glyphicon-log-out"></i> 退出</a></li>
+					<li><a href="#" class="glyphicon glyphicon-tasks"></a></li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="main"></div>
+	</div>
+</body>
+	<script src="js/lib/require.js" data-main="main"></script>
+</html>

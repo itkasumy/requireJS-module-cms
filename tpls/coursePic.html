@@ -1,0 +1,30 @@
+<div class="panel panel-default">
+    <div class="panel-body">
+        <ol class="breadcrumb">
+            <li><a href="#">课程管理</a></li>
+            <li><a href="#">课程圖片</a></li>
+        </ol>
+
+        <div class="panel panel-default">
+            <div class="panel-heading text-center">
+                <h4>课程圖片</h4>
+            </div>
+
+            <div class="panel-body">
+                <div class="media">
+                    <div class="media-left">
+                        <a href="#">
+                            <img class="media-object" src="{{cs_cover}}" width="240px" height="120px">
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <input type="hidden" name="cs_id" value="{{cs_id}}">
+                        <h4 class="media-heading">課程名稱: {{cs_name}}</h4>
+                        <h4 class="media-heading">講師名稱: {{tc_name}}</h4>
+                        <input type="file" id="picUpload">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

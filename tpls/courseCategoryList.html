@@ -1,0 +1,53 @@
+<div class="courseCategoryList">
+    <ol class="breadcrumb">
+        <li><a href="#">课程分类管理</a></li>
+        <li><a href="#">课程分类列表</a></li>
+    </ol>
+
+    <div class="btn-container row">
+        <div class="col-md-1 col-md-offset-10">
+            <button class="btn btn-success" id="btnAddCategory">添加分类</button>
+        </div>
+    </div>
+
+    <div class="panel paner-default">
+        <div class="panel-body">
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>分类名称</th>
+                        <th>课程数量</th>
+                        <th>是否显示</th>
+                        <th>降序</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{each result}}
+                        {{if($value.cg_pid == 0)}}
+                        <tr class="success">
+                            <td>{{$value.cg_name}}</td>
+                            <td>{{$value.total}}</td>
+                            <td>{{$value.cg_is_hide}}</td>
+                            <td>{{$value.cg_order}}</td>
+                            <td cgId="{{$value.cg_id}}">
+                                <button class="btn btn-primary edit">编辑</button>
+                            </td>
+                        </tr>
+                        {{else}}
+                        <tr>
+                            <td>|-{{$value.cg_name}}</td>
+                            <td>{{$value.total}}</td>
+                            <td>{{$value.cg_is_hide}}</td>
+                            <td>{{$value.cg_order}}</td>
+                            <td cgId="{{$value.cg_id}}">
+                                <button class="btn btn-primary edit">编辑</button>
+                            </td>
+                        </tr>
+                        {{/if}}
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
